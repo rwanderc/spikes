@@ -15,8 +15,11 @@ public final class Simulator {
     }
 
     public static void main(final String[] args) {
-        final DataGenerator supplier = new DataGenerator(0, -10d, 20d, 50L, 0.01d, 0.2d);
+        final DataGenerator supplier = new DataGenerator(0, -10d, 20d, 1L, 0.005d, 0.2d);
         final Simulator simulator = new Simulator(supplier);
-        simulator.generate().forEach(System.out::println);
+        simulator.generate().forEach(d -> {
+
+            System.out.println(d);
+        });
     }
 }
